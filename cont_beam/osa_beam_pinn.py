@@ -1062,6 +1062,7 @@ class osa_pinn_beam_vel_2(nn.Module):
         self.cc_pairs = torch.cat(self.cc_pairs, dim=1).T
 
         self.ic_ids = torch.argwhere((self.t_col==torch.tensor(0.0)) * (self.x_col==torch.tensor(0.0)))
+        self.ec_ids = torch.argwhere((self.t_col==torch.tensor(0.0)) * (self.x_col==torch.tensor(0.0)))
         # self.G = torch.zeros_like(self.x_col)
         # self.G[self.ic_ids] = self.w0_col[self.ic_ids]
         # self.D = torch.ones_like(self.x_col)
